@@ -1,0 +1,44 @@
+{
+  "root": true,
+  "extends": "airbnb-base",
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "max-len": ["error", {
+      "code": 80,
+      "tabWidth": 2,
+      "ignoreComments": false,
+      "ignoreTrailingComments": false,
+      "ignoreUrls": true,
+      "ignoreStrings": false,
+      "ignoreTemplateLiterals": false,
+      "ignoreRegExpLiterals": true
+    }],
+    "no-magic-numbers": ["error", {
+      "ignore": [-1, 0, 1, 200, 400, 401, 403, 404, 422, 500],
+      "ignoreArrayIndexes": true,
+      "enforceConst": true
+    }],
+    "no-console": ["error"],
+    "no-underscore-dangle": ["error", {
+      "allowAfterThis": true,
+      "enforceInMethodNames": true
+    }],
+    "no-restricted-syntax": [
+      "error", "ForInStatement", "LabeledStatement", "WithStatement"
+    ]
+  },
+  "globals": {
+    "log": "readonly",
+    "db": "readonly",
+    "knex": "readonly",
+    "findOrCreateQuery": "readonly",
+    "salto": "readonly"
+  }
+}
